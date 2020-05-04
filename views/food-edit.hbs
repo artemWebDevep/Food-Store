@@ -1,0 +1,28 @@
+<h1>Редактировать блюдо "{{food.title}}"</h1>
+
+<form action="/food/edit" method="POST">
+    <div class="input-field">
+        <input  id="title" name="title" type="text" class="validate" required value="{{food.title}}">
+        <label for="title">Название</label>
+        <span class="helper-text" data-error="Введите название"></span>
+    </div>
+
+    <div class="input-field">
+        <input  id="price" name="price" type="number" class="validate" required min="1" value="{{food.price}}">
+        <label for="title">Цена</label>
+        <span class="helper-text" data-error="Введите цену"></span>
+    </div>
+
+    <div class="input-field">
+        <input  id="img" name="img" type="text" class="validate" required value="{{food.img}}">
+        <label for="img">URL</label>
+        <span class="helper-text" data-error="Введите url"></span>
+    </div>
+    <input type="hidden" name="id" value="{{food.id}}">
+
+    <button class="btn btn-primary">Редактировать</button>
+
+
+
+
+</form>

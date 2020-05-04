@@ -1,0 +1,26 @@
+<h1>наш асортимент</h1>
+
+
+{{#if foods.length}}
+{{#each foods}}
+<div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{img}}" alt="{{title}}">
+          </div>
+        <div class="card-content">
+            <span class="card-title">{{title}}</span>
+          <p class="price">{{price}}</p>
+        </div>
+        <div class="card-action">
+          <a href="/food/{{id}}" target="_blank">Подробнее</a>
+          <a href="/food/{{id}}/edit?allow=true">Редактировать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+{{else}}
+<p>Здесь пока ничего нет</p>
+{{/if}}
