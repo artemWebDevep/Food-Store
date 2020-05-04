@@ -11,4 +11,13 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.get('/:id', async (req, res) => {
+    const food = await Foods.getById(req.params.id)
+    res.render('foodDescr',{
+        layout: 'empty',
+        title: `Блюдо ${food.title}`,
+        food
+    })
+})
+
 module.exports = router

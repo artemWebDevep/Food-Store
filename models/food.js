@@ -60,6 +60,11 @@ class Food {
 			)
 		})
 	}
+
+	static async getById(id) {
+		const foods = await Food.getAll()
+		return foods.find(f => f.id === id)
+	}
 }
 
 
