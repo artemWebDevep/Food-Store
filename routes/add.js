@@ -12,8 +12,8 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
     console.log(req.body)
-    // const food = new Food(req.body.title, req.body.price, req.body.img)
-    // await food.save()
+    const food = new Food(req.body.title, req.body.price, req.body.img)
+    await food.save()
     res.redirect('/food')
 })
 
