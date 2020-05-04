@@ -24,7 +24,12 @@ router.get('/:id/edit', async (req, res) => {
     })
 })
 
-
+///
+router.post('/edit', async (req, res) => {
+    await Foods.update(req.body)
+    res.redirect('/food')
+})
+///
 
 router.get('/:id', async (req, res) => {
     const food = await Foods.getById(req.params.id)

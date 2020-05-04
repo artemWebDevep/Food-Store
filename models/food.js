@@ -22,6 +22,29 @@ class Food {
 		}
 	}
 
+	static async update(eat) {
+		
+		const eats = await Food.getAll()
+		
+		const idx = eats.findIndex(e => e.id === eat.id)
+		eats[idx] = eat
+
+		return new Promise((resolve, reject) => {
+			
+			fs.writeFile(
+				path.join(__dirname, '..', 'data', 'food.json'),
+				JSON.stringify(eats),
+				(err) => {
+					if(err) {
+						reject(err)
+					}else {
+						resolve()
+					}
+				}
+			)
+		})
+	}
+
 	
 	async save() {
 		const food = await Food.getAll()
