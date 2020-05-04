@@ -5,6 +5,7 @@ const app = express()
 const homeRouters = require('./routes/home')
 const addRouters = require('./routes/add')
 const foodRouters = require('./routes/food')
+const cardRouters = require('./routes/card')
 
 
 const hbs = exphbs.create({
@@ -21,6 +22,7 @@ app.use(express.urlencoded({extended: true}))
 app.use('/', homeRouters)
 app.use('/add', addRouters)
 app.use('/food', foodRouters)
+app.use('/card', cardRouters)
 
 
 
